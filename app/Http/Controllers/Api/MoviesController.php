@@ -40,6 +40,9 @@ class MoviesController extends Controller
             'judul'=>'required',
             'sinopsis'=>'required',
             'poster'=>'required',
+            'tanggal_rilis'=>'required',
+            'durasi_film' => 'required',
+            'video' => 'required'
         ]);
 
         if($validator->fails()){
@@ -80,6 +83,9 @@ class MoviesController extends Controller
             'judul' => 'required',
             'sinopsis' => 'required',
             'poster' => 'required',
+            'tanggal_rilis' => 'required',
+            'durasi_film' => 'required',
+            'video' => 'required'
         ]);
 
         if ($validator->fails()) {
