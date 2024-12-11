@@ -1,4 +1,10 @@
-DirectoryIndex index.php
+# Pastikan direktori index adalah index.php
+DirectoryIndex index.php index.html index.htm
 
+# Aktifkan mod_rewrite untuk membuat URL lebih bersih
 RewriteEngine On
-RewriteRule ^(.*)$ public/$1 [L]
+
+# Jika file yang diminta tidak ada, arahkan ke public/index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
